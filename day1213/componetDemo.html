@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app" >
+        <h1>{{article.title}}</h1>
+        <h2>作者：{{article.author}}</h2>
+        <h3>{{article.publishDate}}</h3>
+        <p>
+                <img :src = "article.imgSrc" style="width:500px; height:300px"/>
+                {{article.content}}
+        </p>
+    </div>
+    <script>
+        var app =new Vue({
+            el:"#app",
+            data:{
+                article:{
+                    title:"论乔碧罗德真实年龄",
+                    author:"作者：郭乐乐",
+                    publishDate:"2019-12-10",
+                    content:"我认为乔女士只有五十岁，和我的奶奶差不多大。",
+                    imgSrc:"http://yuqing.dzwww.com/pmtt/201908/W020190816572453233227.png"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

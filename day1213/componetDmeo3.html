@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<!--插槽-->
+<body>
+    <div id="app">
+
+        <guolele-v2>
+            <template v-slot:title>
+                {{article.title}}
+            </template>
+            <template>
+                {{article.author}}
+            </template>
+            <template>
+                {{article.publishDate}}
+             </template>
+             {{article.content}}
+        </guolele-v2>
+    </div>
+    <script>
+        
+            Vue.component('guolele-v2',{
+            template:'<div>'+
+            '<h1><slot name="title"></slot></h1>'+
+            '<h2><slot name="author"></slot></h2>'+
+            '<h3><slot name="date"></slot></h3>'+
+            '<p><slot></slot></p>'+
+            '</div>'
+        });
+
+        var app =new Vue({
+            el:"#app",
+            data:{
+                article:
+                {
+                    title:"论乔碧罗德真实年龄",
+                    author:"作者：郭乐乐",
+                    publishDate:"2019-12-10",
+                    content:"我认为乔女士只有五十岁，和我的奶奶差不多大。"
+                }     
+            }
+        });
+    </script>
+</body>
+</html>
